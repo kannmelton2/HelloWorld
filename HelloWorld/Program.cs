@@ -9,7 +9,18 @@ namespace HelloWorld
             Console.WriteLine("Howdy Y'all!!");
             Console.ReadKey(); // What happens if you run the app without this line?
 
+            Console.WriteLine("What is your name?");
+            var guestName = Console.ReadLine();
+            Console.WriteLine($"Hello, {guestName}.");
+            Console.WriteLine("What is your favorite color?");
+            var favColor = Console.ReadLine();
+
             var animals = new string[] { "Triceratops", "Gorilla", "Corgi", "Toucan" };
+
+            Random rand = new Random();
+            int index = rand.Next(animals.Length);
+
+            Console.WriteLine($"Woud you like a {favColor} {animals[index]}?");
 
             foreach (var animal in animals)
             {
@@ -18,8 +29,6 @@ namespace HelloWorld
                     Console.WriteLine(animal);
                 }
             }
-
-            var greetings = new string[] { "Hey there, ya'll", "Hello there, would ya like a cuppa?", "Silly, fish don't talk to humans." };
 
             Console.WriteLine("Pick a Greeting: Southern, British, or Fish");
             var chosenGreeting = Console.ReadLine();
@@ -35,6 +44,7 @@ namespace HelloWorld
                     Console.WriteLine("Hey there, ya'll");
                     break;
             }
+
         }
     }
 }
